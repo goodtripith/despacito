@@ -1,0 +1,135 @@
+:root {
+  --bg: #5c93e8;
+  --panel: #141824ee;
+  --text: #f8f6e8;
+  --accent: #ffcf5a;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+}
+
+.stage-wrap {
+  width: 100vw;
+  height: 100vh;
+  padding: 8px;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  image-rendering: pixelated;
+  border: 2px solid #1b1f33;
+  border-radius: 8px;
+}
+
+.hud-btn {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  border: 2px solid #2c304d;
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+  font-weight: 700;
+  background: #f1b145;
+  color: #181818;
+  cursor: pointer;
+}
+
+.panel {
+  position: fixed;
+  top: 56px;
+  right: 14px;
+  width: 330px;
+  max-height: calc(100vh - 72px);
+  overflow: auto;
+  z-index: 10;
+  background: var(--panel);
+  border: 2px solid #42496f;
+  border-radius: 12px;
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  backdrop-filter: blur(3px);
+}
+
+.hidden { display: none; }
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-head h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.mini-btn {
+  background: #2f3556;
+  color: #fff;
+  border: 1px solid #6873ad;
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.control {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.4rem 0.7rem;
+  align-items: center;
+}
+
+.control label {
+  grid-column: 1 / -1;
+  font-weight: 700;
+}
+
+input[type="range"], select, button {
+  width: 100%;
+}
+
+.buttons {
+  display: grid;
+  gap: 0.45rem;
+}
+
+button {
+  border: 1px solid #8189b6;
+  border-radius: 6px;
+  padding: 0.48rem;
+  background: #3f4670;
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.event-log {
+  list-style: none;
+  margin: 0;
+  padding: 0.45rem;
+  min-height: 110px;
+  max-height: 130px;
+  overflow-y: auto;
+  border: 1px solid #586097;
+  border-radius: 6px;
+  background: #0f1320;
+  font-size: 0.86rem;
+}
+
+.instructions {
+  margin: 0;
+  font-size: 0.86rem;
+  opacity: 0.92;
+}
